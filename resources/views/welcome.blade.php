@@ -165,7 +165,10 @@
             @endif
 
                 <div class="container">
-                    <h1 class="h1"><b>ALCALA E-SERVICES</b></h1>
+                    <div class="text-center">
+                        <img src="{{url('/images/goverment.png')}}" width="200vh">
+                    </div>
+                    <h1 class="display-1"><b>ALCALA E-SERVICES</b></h1>
                 </div>
 
         </div>
