@@ -166,7 +166,7 @@
 
                 <div class="container">
                     <div class="text-center">
-                        <img src="{{url('/images/goverment.png')}}" width="200vh">
+                        <img src="{{url('/images/alcala_logo.png')}}" width="300vh">
                     </div>
                     <h1 class="display-1"><b>ALCALA E-SERVICES</b></h1>
                 </div>
