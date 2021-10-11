@@ -4,9 +4,14 @@
 
     <div class="container h-100">
         <div class="row justify-content-center align-items-center">
+            <div class="container mt-5">
+                <div class="text-center">
+                    <img src="{{url('/images/alcala_logo.png')}}" width="200vh">
+                    <h5 class="h5 mt-3"><b>ALCALA E-SERVICES</b></h5>
+                </div>
+            </div>
             <div class="col-md-5">
-                <div class="card" style="margin-top: 15vh">
-                    <h2 class="text-center" style="margin-top: 1em">LOGIN</h2>
+                    <h2 class="text-center">LOGIN</h2>
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
