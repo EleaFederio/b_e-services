@@ -107,10 +107,9 @@
     </button>
 
     <div>
-        <div >
-
-        <h1>Hello World</h1>
-        </div>
+        <main class="py-4">
+            @yield('content')
+        </main>
     </div>
 
 </div>

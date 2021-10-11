@@ -13,6 +13,11 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap" rel="stylesheet">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
@@ -21,6 +26,9 @@
             background-image: linear-gradient(135.9deg, rgba(255, 244, 224,1)  16.4%, rgba(224, 233, 255 ,1)  56.1%);
             min-height: 100vh;
             overflow-x: hidden;
+        }
+        .display-text{
+            font-family: 'Work Sans';
         }
         .vertical-nav{
             min-width: 17rem;
@@ -91,9 +99,13 @@
             @include('partials.sidebar')
         @endauth
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+        @guest
+            <main class="py-4">
+                @yield('content')
+            </main>
+        @endguest
+
+
     </div>
 {{--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>--}}
     <script src="{{ asset('js/app.js') }}" defer></script>
