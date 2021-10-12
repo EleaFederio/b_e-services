@@ -14,37 +14,37 @@
 
     <ul  class="nav flex-column bg-white mb-0">
         <li class="nav-item">
-            <a href="#" class="nav-link text-dark bg-light">
+            <a href="{{ '/' }}" class="nav-link text-dark {{ (request()->is('/')) ? 'bg-light' : '' }}">
                 <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
                 Home
             </a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link text-dark bg-light">
+            <a href="{{ url('my_account') }}" class="nav-link text-dark {{ (request()->is('my_account')) ? 'bg-light' : '' }}">
                 <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
                 My Account
             </a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link text-dark bg-light">
+            <a href="#" class="nav-link text-dark">
                 <i class="fa fa-folder-open mr-3 text-primary fa-fw"></i>
                 Records
             </a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link text-dark bg-light">
+            <a href="#" class="nav-link text-dark">
                 <i class="fa fa-certificate mr-3 text-primary fa-fw"></i>
                 Certificates
             </a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link text-dark bg-light">
+            <a href="#" class="nav-link text-dark">
                 <i class="fa fa-briefcase mr-3 text-primary fa-fw"></i>
                 Officials
             </a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link text-dark bg-light">
+            <a href="#" class="nav-link text-dark">
                 <i class="fa fa-bullhorn mr-3 text-primary fa-fw"></i>
                 Report
             </a>
