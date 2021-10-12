@@ -26,13 +26,13 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link text-dark">
+            <a href="{{ url('records') }}" class="nav-link text-dark {{ (request()->is('records')) ? 'bg-light' : '' }}">
                 <i class="fa fa-folder-open mr-3 text-primary fa-fw"></i>
                 Records
             </a>
         </li>
         <li class="nav-item">
-            <a href="#" class="nav-link text-dark">
+            <a href="{{ url('certificates') }}" class="nav-link text-dark {{ (request()->is('certificates')) ? 'bg-light' : '' }}">
                 <i class="fa fa-certificate mr-3 text-primary fa-fw"></i>
                 Certificates
             </a>
