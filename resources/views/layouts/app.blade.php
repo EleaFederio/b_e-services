@@ -30,6 +30,9 @@
         .display-text{
             font-family: 'Work Sans';
         }
+        .nav-item active{
+            background-color: #1b4b72;
+        }
         .vertical-nav{
             min-width: 17rem;
             width: 17rem;
