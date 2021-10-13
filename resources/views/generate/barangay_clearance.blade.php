@@ -17,10 +17,23 @@
             font-family: "Arial", sans-serif;
             font-weight: lighter;
             color: #555;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+        .barangay-name{
+            font-weight: bold;
+        }
+        .office{
+            font-weight: bolder;
+            text-align: center;
+            text-decoration: underline;
         }
         .date{
             text-align: right;
             margin-right: 70px;
+            margin-top: 10px;
+        }
+        .salutation{
             margin-top: 70px;
         }
         .wrap {
@@ -40,9 +53,32 @@
             background-position: center;
             background-size: contain;
         }
-
+        .chairman-signatory{
+            position: relative;
+            top: 300px;
+            text-align: left;
+            margin-bottom: auto;
+        }
+        .position{
+            position: static;
+            width: 50%;
+            text-align: center;
+            margin-left: auto;
+        }
         .content {
             position: relative;
+        }
+        .letter-body {
+            /*word-break: break-all;*/
+            /*white-space: normal;*/
+            /*display:inline-block;*/
+            /*width: 630px;*/
+            text-indent: 3em;
+            text-align: justify-all;
+        }
+        p{
+            margin-left: 70px;
+            margin-right: 30px;
         }
     </style>
 
@@ -57,20 +93,38 @@
             <!-- MAIN Content -->
 
             <!-- Certificate Header  -->
-            <h5 class="header">Alcala, Daraga, Albay</h5>
+            <h5 class="header">Republic of the Philippines</h5>
+            <h5 class="header">Province of Albay</h5>
+            <h5 class="header">Municipality of Daraga</h5>
+            <h5 class="header barangay-name">BARANGAY ALCALA</h5>
+
+            <!-- office -->
+            <h3 class="title office">OFFICE OF THE BARANGAY CHAIRMAN</h3>
 
             <!-- Date  -->
-            <p class="date">{{ date("F j, Y") }}</p>
+{{--            <p class="date">{{ date("F j, Y") }}</p>--}}
 
             <!-- Certificate Title  -->
-            <h2 class="title">BARANGAY CERTIFICATE</h2>
+            <h2 class="title">CERTIFICATE OF INDIGENCY</h2>
+
+            <!-- Salutation -->
+            <p class="salutation">TO WHOM IT MAY CONCERN:</p>
 
             <!-- Main Content -->
+            <p class="letter-body">"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. "</p>
 
 
 
 
             <!-- Footer -->
+            <div class="chairman-signatory">
+                <div class="position">
+                    <h4 style="margin-bottom: auto">Juan de la Cruz</h4>
+                    <hr>
+                    <h6 style="font-weight: lighter; margin-top: 0">Punong Barangay</h6>
+                </div>
+            </div>
+
 
         </div>
     </div>
