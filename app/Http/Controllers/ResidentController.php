@@ -35,7 +35,33 @@ class ResidentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validate = $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'middle_name' => 'required',
+            'email' => 'required',
+            'birth_date' => 'required',
+            'phone_number' => 'required',
+            'gender' => 'required',
+            'nationality' => 'required',
+            'birth_place' => 'required',
+            'occupation' => 'required',
+            'monthly_income' => 'required',
+        ]);
+        $resident = Resident::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'middle_name' => $request->middle_name,
+            'birth_date' => now(),
+            'email' => $request->email,
+            'phone_number' => $request->phone_number,
+            'gender' => $request->gender,
+            'nationality' => $request->nationality,
+            'birth_place' => $request->birth_place,
+            'occupation' => $request->occupation,
+            'monthly_income' => $request->monthly_income,
+        ]);
+        return dd($resident);
     }
 
     /**
