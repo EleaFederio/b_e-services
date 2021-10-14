@@ -20,6 +20,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+    <script src="{{ asset('js/app.js') }}"></script>
+
     <style>
         body{
             background: #599fd9;
@@ -94,6 +97,64 @@
                 width: calc(100% - 17rem);
             }
         }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    /*    Profile*/
+        /*Profile Pic Start*/
+        .picture-container{
+            position: relative;
+            cursor: pointer;
+            text-align: center;
+        }
+        .picture{
+            width: 106px;
+            height: 106px;
+            background-color: #999999;
+            border: 4px solid #CCCCCC;
+            color: #FFFFFF;
+            border-radius: 50%;
+            margin: 0px auto;
+            overflow: hidden;
+            transition: all 0.2s;
+            -webkit-transition: all 0.2s;
+        }
+        .picture:hover{
+            border-color: #2ca8ff;
+        }
+        .content.ct-wizard-green .picture:hover{
+            border-color: #05ae0e;
+        }
+        .content.ct-wizard-blue .picture:hover{
+            border-color: #3472f7;
+        }
+        .content.ct-wizard-orange .picture:hover{
+            border-color: #ff9500;
+        }
+        .content.ct-wizard-red .picture:hover{
+            border-color: #ff3b30;
+        }
+        .picture input[type="file"] {
+            cursor: pointer;
+            display: block;
+            height: 100%;
+            left: 0;
+            opacity: 0 !important;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        .picture-src{
+            width: 100%;
+
+        }
+
     </style>
 </head>
 <body>
@@ -110,7 +171,9 @@
 
 
     </div>
-{{--    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>--}}
-    <script src="{{ asset('js/app.js') }}" defer></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/js/bootstrap-datetimepicker.min.js"></script>
 </body>
 </html>
+

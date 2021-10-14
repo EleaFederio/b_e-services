@@ -22,6 +22,7 @@
         "sass-loader": "^11.0.1"
     },
     "dependencies": {
+        "bootstrap-datepicker": "^1.9.0",
         "font-awesome": "^4.7.0"
     }
 }

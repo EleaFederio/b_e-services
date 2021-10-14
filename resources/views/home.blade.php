@@ -2,6 +2,11 @@
 
 @section('content')
 <div class="container">
+
+    <!-- title -->
+    <h1 class="h1 text-center">Dashboard</h1>
+
+    <!-- Population Blotter and Household -->
     <div class="row justify-content-center">
         <div class="col">
             <div class="card mt-2">
@@ -44,7 +49,30 @@
                 </div>
             </div>
         </div>
-
     </div>
+
+    <div class="card mt-5">
+        <div class="card-body">
+            <h3 class="h3 card-title text-center"><b>Current Barangay Officials</b></h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Position</th>
+                        <th scope="col">Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
 </div>
 @endsection

@@ -6,6 +6,7 @@ use \App\Http\Controllers\MyAccount;
 use \App\Http\Controllers\RecordController;
 use \App\Http\Controllers\CertificateController;
 use \App\Http\Controllers\PDFGenerator;
+use \App\Http\Controllers\ResidentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,5 @@ Route::get('my_account', [MyAccount::class, 'index']);
 Route::get('records', [RecordController::class, 'index']);
 Route::get('certificates', [CertificateController::class, 'index']);
 Route::get('generate/barangay_certificate', [PDFGenerator::class, 'barangayCertificate']);
+
+Route::post('resident', [ResidentController::class, 'store']);
