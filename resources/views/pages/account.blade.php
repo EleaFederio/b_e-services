@@ -3,7 +3,7 @@
 @section('content')
 
     <!-- Cards Left-Side -->
-    <div>
+    <div class="container">
         <!-- title -->
         <div class="text-center mb-4">
             <h1 class="h1">My Account</h1>

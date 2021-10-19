@@ -26,9 +26,9 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="{{ url('records') }}" class="nav-link text-dark {{ (request()->is('records')) ? 'bg-light' : '' }}">
+            <a href="{{ url('resident') }}" class="nav-link text-dark {{ (request()->is('records')) ? 'bg-light' : '' }}">
                 <i class="fa fa-folder-open mr-3 text-primary fa-fw"></i>
-                Records
+                Residents
             </a>
         </li>
         <li class="nav-item">

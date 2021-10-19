@@ -26,8 +26,8 @@ Auth::routes(['register' => false]);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('my_account', [MyAccount::class, 'index']);
-Route::get('records', [RecordController::class, 'index']);
 Route::get('certificates', [CertificateController::class, 'index']);
 Route::get('generate/barangay_certificate', [PDFGenerator::class, 'barangayCertificate']);
 
 Route::post('resident', [ResidentController::class, 'store']);
+Route::get('resident', [ResidentController::class, 'index']);

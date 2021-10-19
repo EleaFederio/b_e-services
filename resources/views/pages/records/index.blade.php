@@ -3,11 +3,54 @@
 @section('content')
     <div class="container">
         <div class="text-center">
-            <h1 class="h1">Records</h1>
+            <h1 class="h1">Residents</h1>
         </div>
         <button class="btn btn-primary" data-toggle="modal" data-target="#updateProfileModal">
             <i class="fa fa-user-plus"></i> Add Resident
         </button>
+
+        {{--        Table       --}}
+        @if(!empty($residents))
+            <div class="card mt-2 mb-1">
+                <div class="card-body">
+                    <table class="table">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col" class="text-center">First</th>
+                            <th scope="col" class="text-center">Last</th>
+                            <th scope="col" class="text-center">Handle</th>
+                            <th scope="col" class="text-center">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($residents as $resident)
+                            <tr>
+                                <td class="text-center">{{ $resident->first_name }}</td>
+                                <td class="text-center">{{ $resident->last_name }}</td>
+                                <td class="text-center">{{ $resident->middle_name }}</td>
+                                <td>
+                                    <div class="row">
+                                        <div class="col">
+                                            <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></a>
+                                        </div>
+                                        <div class="col">
+                                            <a href="#" class="btn btn-secondary btn-sm"><i class="fas fa-edit"></i></a>
+                                        </div>
+                                        <div class="col">
+                                            <a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        @endif
+
+        {{ $residents->links() }}
+
 
 
         <!-- ******************** Modal Section ******************** -->

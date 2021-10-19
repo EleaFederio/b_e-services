@@ -14,7 +14,8 @@ class ResidentController extends Controller
      */
     public function index()
     {
-        //
+        $residents = Resident::paginate(3);
+        return view('pages/records/index', compact('residents') );
     }
 
     /**
@@ -61,7 +62,6 @@ class ResidentController extends Controller
             'occupation' => $request->occupation,
             'monthly_income' => $request->monthly_income,
         ]);
-        return dd($resident);
     }
 
     /**
