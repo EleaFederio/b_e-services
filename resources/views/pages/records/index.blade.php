@@ -29,7 +29,7 @@
                                 <td class="text-center">{{ $resident->last_name }}</td>
                                 <td class="text-center">{{ $resident->middle_name }}</td>
                                 <td>
-                                    <div class="row">
+                                    <div class="row text-center">
                                         <div class="col">
                                             <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-eye"></i></a>
                                         </div>
