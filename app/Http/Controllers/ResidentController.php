@@ -63,6 +63,7 @@ class ResidentController extends Controller
             'monthly_income' => $request->monthly_income,
         ]);
 
+
         $residents = Resident::paginate(10);
         return view('pages/records/index', compact('residents') );
     }

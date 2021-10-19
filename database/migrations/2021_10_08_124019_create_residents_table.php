@@ -31,7 +31,7 @@ class CreateResidentsTable extends Migration
             $table->string('image_url')->nullable();
 //            highest education attainment
             $table->integer('length_of_stay')->nullable(); // must be start  date
-            $table->integer('occupation');
+            $table->string('occupation');
             $table->decimal('monthly_income', 9, 2);
 //            blood type must be relational
 //            marital status must be relational
