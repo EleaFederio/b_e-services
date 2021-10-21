@@ -4,9 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Resident;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class ResidentController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -36,32 +43,62 @@ class ResidentController extends Controller
      */
     public function store(Request $request)
     {
-        $validate = $request->validate([
+
+        $validator = Validator::make($request->all(), [
             'first_name' => 'required',
             'last_name' => 'required',
-            'middle_name' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
             'birth_date' => 'required',
             'phone_number' => 'required',
             'gender' => 'required',
             'nationality' => 'required',
             'birth_place' => 'required',
             'occupation' => 'required',
-            'monthly_income' => 'required',
+            'monthly_income' => 'required'
         ]);
-        $resident = Resident::create([
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'middle_name' => $request->middle_name,
-            'birth_date' => now(),
-            'email' => $request->email,
-            'phone_number' => $request->phone_number,
-            'gender' => $request->gender,
-            'nationality' => $request->nationality,
-            'birth_place' => $request->birth_place,
-            'occupation' => $request->occupation,
-            'monthly_income' => $request->monthly_income,
-        ]);
+
+//        return response()->json([
+//            'status'=> 1,
+//            'message' => $validator->passes()
+//        ]);
+
+        if(!$validator->passes()){
+            return response()->json([
+                'status' => 0,
+                'error'=> $validator->errors()->toArray()
+            ]);
+        }else{
+            $resident = Resident::create([
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'middle_name' => $request->middle_name,
+                'birth_date' => now(),
+                'email' => $request->email,
+                'phone_number' => $request->phone_number,
+                'gender' => $request->gender,
+                'nationality' => $request->nationality,
+                'birth_place' => $request->birth_place,
+                'occupation' => $request->occupation,
+                'monthly_income' => $request->monthly_income,
+            ]);
+            return response()->json([
+                'status' => 0,
+                'error'=> 'Hahaha'
+            ]);
+            return response()->json([
+                'status'=> 1,
+                'message' => 'Resident successfully added!'
+            ]);
+//            if($resident){
+//                return response()->json([
+//                    'status'=> 1,
+//                    'message' => 'Resident successfully added!'
+//                ]);
+//            }
+        }
+
+
+
 
 
         $residents = Resident::paginate(10);
@@ -87,7 +124,8 @@ class ResidentController extends Controller
      */
     public function edit(Resident $resident)
     {
-        //
+        $resident = Resident::find($resident->id);
+        return response()->json($resident);
     }
 
     /**
@@ -110,6 +148,9 @@ class ResidentController extends Controller
      */
     public function destroy(Resident $resident)
     {
-        //
+        $resident = Resident::find($resident->id)->delete();
+        return response()->json([
+            'success' => 'Resident deleted from the System'
+        ]);
     }
 }

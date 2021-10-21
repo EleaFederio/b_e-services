@@ -17,7 +17,7 @@ class CreateResidentsTable extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('middle_name');
+            $table->string('middle_name')->nullable();
             $table->string('suffix')->nullable();
             $table->date('birth_date');
             $table->string('phone_number');

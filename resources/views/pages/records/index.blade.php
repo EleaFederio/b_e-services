@@ -56,7 +56,7 @@
         <!-- ******************** Modal Section ******************** -->
         <div class="modal fade" id="updateProfileModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <form action={{ url("resident") }} method="POST" enctype="multipart/form-data">
+                <form action="{{ url('resident') }}" method="POST" id="submit_resident">
                     @csrf
                     <div class="modal-content">
                     <div class="modal-header">
@@ -84,12 +84,14 @@
                                     <!-- Firstname -->
                                     <div class="form-group mt-4">
                                         <label>First Name</label>
-                                        <input type="text" class="form-control" name="first_name" placeholder="Firstname..." required>
+                                        <input type="text" class="form-control" name="first_name" placeholder="Firstname...">
+                                        <span class="text-danger error-text first_name-error"></span>
                                     </div>
                                     <!-- Lastname -->
                                     <div class="form-group">
                                         <label>Last Name</label>
-                                        <input type="text" class="form-control" name="last_name" placeholder="Lastname..." required>
+                                        <input type="text" class="form-control" name="last_name" placeholder="Lastname...">
+                                        <span class="text-danger error-text last_name-error"></span>
                                     </div>
                                     <!-- Lastname -->
                                     <div class="form-group">
@@ -115,7 +117,8 @@
                                             <div class="form-group">
                                                 <label for="b_day">Date of Birth</label>
                                                 <input type="date" id="b_day" class="form-control" name="birth_date"
-                                                       value="{{ date('Y-m-d') }}">
+                                                       value="{{ date('Y-m-d') }}" required>
+                                                <span class="text-danger error-text birth_date-error"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -125,20 +128,23 @@
                                     <!-- Zone -->
                                     <div class="form-group">
                                         <label>Zone</label>
-                                        <input type="text" class="form-control" placeholder="Select Zone...">
+                                        <input type="text" class="form-control" name="zone" placeholder="Select Zone...">
+{{--                                        <span class="text-danger error-text zone-error"></span>--}}
                                     </div>
                                     <!-- PhoneNumber -->
-                                    <div class="form-group">
+                                    <div class="form-group mb-3">
                                         <label>Phone Number</label>
-                                        <div class="input-group mb-3">
+                                        <div class="input-group">
                                             <span class="input-group-text" id="basic-addon1">+63</span>
                                             <input type="text" class="form-control" name="phone_number" placeholder="10 digit (ex. 9123456789)" aria-label="Username" aria-describedby="basic-addon1">
                                         </div>
+                                        <span class="text-danger error-text phone_number-error"></span>
                                     </div>
                                     <!-- Lastname -->
                                     <div class="form-group">
                                         <label>Email Address</label>
-                                        <input type="email" class="form-control" name="email" placeholder="Enter email address..." required>
+                                        <input type="email" class="form-control" name="email" placeholder="Enter email address..." >
+                                        <span class="text-danger error-text email-error"></span>
                                     </div>
                                     <div class="row">
                                         <div class="col-5">
@@ -148,12 +154,14 @@
                                                     <option>Male</option>
                                                     <option>Female</option>
                                                 </select>
+                                                <span class="text-danger error-text gender-error"></span>
                                             </div>
                                         </div>
                                         <div class="col-7">
                                             <div class="form-group">
                                                 <label>Nationality</label>
-                                                <input type="text" class="form-control" name="nationality" placeholder="Nationality..." required>
+                                                <input type="text" class="form-control" name="nationality" placeholder="Nationality..." >
+                                                <span class="text-danger error-text nationality-error"></span>
                                             </div>
                                         </div>
                                         <div class="col-5">
@@ -162,23 +170,27 @@
                                                 <div class="input-group mb-3">
                                                     <span class="input-group-text" id="basic-addon1">₱</span>
                                                     <input type="number" step="0.01" class="form-control" name="monthly_income" placeholder="ex. 10,000.00" aria-label="Username" aria-describedby="basic-addon1">
+                                                    <span class="text-danger error-text monthly_income-error"></span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-7">
                                             <div class="form-group">
                                                 <label>Occupation</label>
-                                                <input type="text" class="form-control" name="occupation" placeholder="Occupation..." required>
+                                                <input type="text" class="form-control" name="occupation" placeholder="Occupation..." >
+                                                <span class="text-danger error-text occupation-error"></span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label>Birth Place</label>
                                         <input type="text" class="form-control" name="birth_place" placeholder="Birth Place...">
+                                        <span class="text-danger error-text birth_place-error"></span>
                                     </div>
                                     <div class="form-group">
                                         <label>Former Address</label>
                                         <input type="text" class="form-control" name="former_address" placeholder="Former Address...">
+                                        <span class="text-danger error-text former_address-error"></span>
                                     </div>
                                 </div>
                             </div>
@@ -194,25 +206,7 @@
         </div>
     </div>
 
-    <script>
-
-        $(document).ready(function(){
-            $("#wizard-picture").change(function(){
-                readURL(this);
-            });
-        });
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#wizardPicturePreview').attr('src', e.target.result).fadeIn('slow');
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-
+    <script src="{{ asset('main.js') }}">
     </script>
 
 @endsection

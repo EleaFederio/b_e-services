@@ -48,7 +48,7 @@
                 width: 100%;
                 height: 100%;
                 opacity: 0.05;
-                background-image: url('https://drive.google.com/uc?id=12F_ALpCrGYo5fbxoM7zCgF1U4c4CwBQa&export=media');
+                background-image: url('https://res.cloudinary.com/dra4gc1qp/image/upload/v1634746278/alcala_logo_lwi1rq.png');
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: contain;
